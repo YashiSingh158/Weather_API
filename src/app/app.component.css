@@ -1,0 +1,12 @@
+:host {
+    display: block;
+    background-color: black;
+    color: aliceblue;
+    min-height: 92vh;
+    padding: 20px;
+  }
+  h1 {
+    color: aquamarine;
+    text-align: center;
+  }
+  

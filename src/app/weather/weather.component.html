@@ -1,0 +1,15 @@
+<div class="weather-container">
+    <label for="country-select">Select Country:</label><br><br>
+    <select id="country-select" [(ngModel)]="selectedCountry" (change)="onCountrySelect()">
+      <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
+    </select>
+  
+    <div *ngIf="weatherData" class="weather-info">
+      <h2>Weather in {{ selectedCountry }}</h2>
+      <p><strong>Temperature:</strong> {{ (weatherData.main.temp - 273.15) | number:'1.0-1' }} °C</p>
+      <p><strong>Weather:</strong> {{ weatherData.weather[0].description }}</p>
+      <p><strong>Humidity:</strong> {{ weatherData.main.humidity }}%</p>
+      <p><strong>Wind Speed:</strong> {{ weatherData.wind.speed }} m/s</p>
+    </div>
+  </div>
+  
